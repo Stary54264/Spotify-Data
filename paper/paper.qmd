@@ -51,9 +51,21 @@ The variables analyzed in this study are listed below:
 
 `tempo`: the pace of the song.
 
-The dataset was accessed using the `spotifyr` package (@spotifyr). For the analysis, the R programming language was employed (@r), utilizing the `tidyverse` (@tidyverse) package for data cleaning, transformation, visualization, and the `here` package (@here) accessing the data in this analysis. Afterward, the cleaned dataset was processed and tested using additional functions from the `tidyverse` package (@tidyverse).
+The dataset was accessed using the `spotifyr` package (@spotifyr). For the analysis, the R programming language was employed (@r), utilizing the `tidyverse` (@tidyverse) package for data cleaning, transformation, visualization, the `knitr` package to visualize the data, and the `here` package (@here) accessing the data in this analysis. Afterward, the cleaned dataset was processed and tested using additional functions from the `tidyverse` package (@tidyverse).
 
 ## Preview of the Dataset
+
+This (@tbl-data) is the preview of the dataset.
+
+```{r}
+#| label: tbl-data
+#| tbl-cap: Preview of Data
+#| echo: false
+#| warning: false
+#| message: false
+
+kable(head(data), format = "markdown")
+```
 
 # Results {#sec-results}
 
