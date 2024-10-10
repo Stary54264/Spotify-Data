@@ -41,31 +41,21 @@ The dataset used in this analysis is the songs of David Tao sourced from Spotify
 
 The variables analyzed in this study are listed below:
 
-`album_release_date`: the date that the album was released
+`album_release_date`: the date that the album was released.
 
-`energy`: the energy of the song
+`energy`: the energy of the song.
 
-`key`: the main key of the song
+`key`: the main key of the song.
 
-`valence`: the degree of happiness of the song
+`valence`: the degree of happiness of the song.
 
-`tempo`: the pace of the song
+`tempo`: the pace of the song.
 
 The dataset was accessed using the `spotifyr` package (@spotifyr). For the analysis, the R programming language was employed (@r), utilizing the `tidyverse` (@tidyverse) package for data cleaning, transformation, visualization, and the `here` package (@here) accessing the data in this analysis. Afterward, the cleaned dataset was processed and tested using additional functions from the `tidyverse` package (@tidyverse).
 
 ## Preview of the Dataset
 
 # Results {#sec-results}
-
-## Gain from Distribution of the Variables
-
-The histogram of air temperatures, as shown in @fig-air, reveals that most recorded air temperatures at Toronto beaches fall between 12°C and 30°C, with a noticeable peak around 20°C. The distribution is approximately symmetric, indicating no significant skew, meaning that air temperatures are evenly spread around the central value. This suggests that beach monitoring predominantly occurs during periods of moderate and comfortable weather, which is conducive to outdoor activities. Temperatures below 8°C and above 33°C are much less frequent, indicating that extreme weather conditions are rare, emphasizing the temperate climate in Toronto during beach usage periods.
-
-In contrast, the water temperature histogram, seen in @fig-water, is left-skewed, meaning that while most temperatures cluster between 8°C and 25°C, there is a tail extending toward lower temperatures. A peak is observed around 18°C, representing the most common water temperatures during beach season. The left skew indicates that colder water temperatures are infrequent but present, typically occurring outside peak summer months. This distribution reflects how water retains heat more slowly than air, remaining relatively cool even as air temperatures rise, which is characteristic of large bodies of water.
-
-Lastly, the waterfowl observations histogram, as seen in @fig-fowl, displays a highly right-skewed distribution. Most days had a low count of waterfowl, with the majority of observations falling between 0 and 50 observations. However, a long tail extends to the right, indicating that while large counts of waterfowl are rare, they do occur on certain days. This right skew suggests occasional spikes in bird activity, possibly linked to seasonal migrations or environmental conditions that attract more birds to the beaches. These sporadic peaks could have implications for water quality, as larger groups of waterfowl might increase the risk of contamination.
-
-These histograms (@fig-air, @fig-water, and @fig-fowl) offer valuable insights into the key environmental variables affecting Toronto beaches. The symmetric air temperature distribution, left-skewed water temperature, and highly right-skewed waterfowl observations each reveal distinct patterns that inform public health monitoring and beach management decisions, ensuring that the environment remains safe and enjoyable for visitors.
 
 \newpage
 
