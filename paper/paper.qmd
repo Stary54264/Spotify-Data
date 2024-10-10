@@ -23,7 +23,7 @@ library(knitr)
 
 # Introduction
 
-To conduct the analysis of songs on Spotify, a dataset downloaded from @spotify was utilized, as described in @sec-data. Based on the initial findings, it was observed that higher air temperatures are correlated with higher water temperatures, while higher water temperatures coincided with an increase in waterfowl activity in some extent(@sec-discussion). Also, supplementary insights are provided in @sec-appendix.
+To conduct the analysis of songs on Spotify, a dataset downloaded from @spotify was utilized, as described in @sec-data. Based on the initial findings, it was observed that `tempo` and `valence` are not positively correlated in a simple (linear) way, while energy falls then rises with time (@sec-discussion). Also, supplementary insights are provided in @sec-appendix.
 
 # Data {#sec-data}
 
@@ -44,8 +44,6 @@ The variables analyzed in this study are listed below:
 `album_release_date`: the date that the album was released.
 
 `energy`: the energy of the song.
-
-`key`: the main key of the song.
 
 `valence`: the degree of happiness of the song.
 
@@ -69,8 +67,22 @@ kable(head(data), format = "markdown")
 
 # Discussion {#sec-discussion}
 
-```{r}
-#| label: fig-water-fowl
+```{r, fig.width=4, fig.height=2}
+#| label: fig-tem-val
+#| fig-cap: Relationship of Tempo and Valence in David's Songs
+#| echo: false
+#| warning: false
+#| message: false
+
+data |>
+  ggplot(aes(x = tempo, y = valence)) +
+  geom_point(col = "lightblue") +
+  geom_smooth() +
+  labs(x = "Tempo", y = "Valence")
+```
+
+```{r, fig.width=4, fig.height=2}
+#| label: fig-time-ener
 #| fig-cap: Changes of Energy with Time in David's Songs
 #| echo: false
 #| warning: false
@@ -80,9 +92,12 @@ data |>
   ggplot(aes(x = album_release_date, y = energy)) +
   geom_point(col = "lightblue") +
   geom_smooth() +
-  theme_minimal() +
-  labs(x = "Date Released", y = "Number of Waterfowl Observed")
+  labs(x = "Date Released", y = "Energy")
 ```
+
+From @fig-tem-val, we can see that `tempo` and `valence` are not strictly positively correlated as we expected. This might due to the lyric and usage of different musical instruments.
+
+From @fig-time-ener, we can find that the energy for David's Songs falls then rises with time, which might be associated with his personal experience.
 
 \newpage
 
@@ -96,8 +111,61 @@ The data cleaning process involved tidying the dates, filtering out useless colu
 
 ## Summary Statistics of the Data
 
-The summary statistics provides key statistical insights into the environmental variables analyzed at Toronto beaches. For each variable, the summarize tables (@tbl-summarise-air, @tbl-summarise-water, and @tbl-summarise-fowl) reports the mean, median, variance, minimum value, maximum value, and interquartile range of those vairables, offering a concise overview of range, central tendencies, and variability in the data.
+```{r}
+#| label: tbl-energy
+#| tbl-cap: Summarise Statistics of Energy in David's Songs
+#| echo: false
+#| warning: false
+#| message: false
 
+summarise_energy <- data |>
+  summarise(Mean = round(mean(energy), 3),
+            Median = round(median(energy), 3),
+            Variance = round(var(energy), 3),
+            Min = round(min(energy), 3),
+            Max = round(max(energy), 3),
+            IQR = round(IQR(energy), 3)
+  )
+kable(summarise_energy, format = "markdown")
+```
+
+```{r}
+#| label: tbl-valence
+#| tbl-cap: Summarise Statistics of Valence in David's Songs
+#| echo: false
+#| warning: false
+#| message: false
+
+summarise_valence <- data |>
+  summarise(Mean = round(mean(valence), 3),
+            Median = round(median(valence), 3),
+            Variance = round(var(valence), 3),
+            Min = round(min(valence), 3),
+            Max = round(max(valence), 3),
+            IQR = round(IQR(valence), 3)
+  )
+kable(summarise_valence, format = "markdown")
+```
+
+```{r}
+#| label: tbl-tempo
+#| tbl-cap: Summarise Statistics of Tempo in David's Songs
+#| echo: false
+#| warning: false
+#| message: false
+
+summarise_tempo <- data |>
+  summarise(Mean = round(mean(tempo), 3),
+            Median = round(median(tempo), 3),
+            Variance = round(var(tempo), 3),
+            Min = round(min(tempo), 3),
+            Max = round(max(tempo), 3),
+            IQR = round(IQR(tempo), 3)
+  )
+kable(summarise_tempo, format = "markdown")
+```
+
+The summary statistics provides key statistical insights into the variables of David's songs. For each variable, the summarize tables (@tbl-energy, @tbl-valence, and @tbl-tempo) reports the mean, median, variance, minimum value, maximum value, and interquartile range of those variables, offering a concise overview of range, central tendencies, and variability in the data.
 
 \newpage
 
