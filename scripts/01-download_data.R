@@ -9,7 +9,7 @@
 
 
 #### Workspace setup ####
-library(opendatatoronto)
+library(spotifyr)
 library(tidyverse)
 
 
