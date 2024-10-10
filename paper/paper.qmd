@@ -23,7 +23,7 @@ library(knitr)
 
 # Introduction
 
-To conduct the analysis of songs on Spotify, a dataset downloaded from @spotify was utilized, as described in @sec-data. Based on the initial findings, it was observed that higher air temperatures are correlated with higher water temperatures, while higher water temperatures coincided with an increase in waterfowl activity in some extent(@sec-results). Also, supplementary insights are provided in @sec-appendix.
+To conduct the analysis of songs on Spotify, a dataset downloaded from @spotify was utilized, as described in @sec-data. Based on the initial findings, it was observed that higher air temperatures are correlated with higher water temperatures, while higher water temperatures coincided with an increase in waterfowl activity in some extent(@sec-discussion). Also, supplementary insights are provided in @sec-appendix.
 
 # Data {#sec-data}
 
@@ -67,7 +67,22 @@ This (@tbl-data) is the preview of the dataset.
 kable(head(data), format = "markdown")
 ```
 
-# Results {#sec-results}
+# Discussion {#sec-discussion}
+
+```{r}
+#| label: fig-water-fowl
+#| fig-cap: Changes of Energy with Time in David's Songs
+#| echo: false
+#| warning: false
+#| message: false
+
+data |>
+  ggplot(aes(x = album_release_date, y = energy)) +
+  geom_point(col = "lightblue") +
+  geom_smooth() +
+  theme_minimal() +
+  labs(x = "Date Released", y = "Number of Waterfowl Observed")
+```
 
 \newpage
 
