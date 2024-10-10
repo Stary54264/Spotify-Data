@@ -1,7 +1,7 @@
 #### Preamble ####
-# Purpose: Cleans the raw beach data into an analysis dataset
+# Purpose: Cleans the raw Spotify data into an analysis dataset
 # Author: Yanzun Jiang
-# Date: 24 September 2024
+# Date: 10 October 2024
 # Contact: yanzun.jiang@mail.utoronto.ca
 # License: MIT
 # Pre-requisites: Need to have downloaded the data
@@ -18,7 +18,9 @@ raw_data <- as_tibble(readRDS("data/raw_data/david_tao.rds"))
 
 # Basic cleaning of the data
 cleaned_data <- raw_data |>
-  mutate(album_release_date = ymd(album_release_date))
+  mutate(album_release_date = ymd(album_release_date)) |>
+  filter_all(all_vars(!is.na(.))) |>
+  select(album_release_date, energy, key, valence, tempo)
 
 
 #### Save data ####
