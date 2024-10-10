@@ -19,7 +19,7 @@ raw_data <- as_tibble(readRDS("data/raw_data/david_tao.rds"))
 # Basic cleaning of the data
 cleaned_data <- raw_data |>
   mutate(album_release_date = ymd(album_release_date)) |>
-  select(album_release_date, energy, key, valence, tempo)
+  select(album_release_date, energy, valence, tempo)
 
 
 #### Save data ####
