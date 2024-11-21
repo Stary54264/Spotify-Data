@@ -3,6 +3,7 @@ title: "Spotify Data"
 author: "Yanzun Jiang, Siyuan Lu, Yi Tang, Jin Zhang"
 date: today
 date-format: long
+abstract: "This study explores the musical evolution of David Tao using data from Spotify, analyzing features like tempo, energy, and valence (happiness) across his songs from 1997 to the present. The analysis reveals that tempo and valence do not show a straightforward positive relationship, while energy levels in his songs decreased over time before rising again, potentially reflecting personal or artistic shifts. These findings show how an artist's musical characteristics can change over decades, indicating the relationship between creative expression and personal or cultural contexts. By examining the dynamics of music over time, this study highlights how data can deepen our understanding of artistry and its evolution."
 format: pdf
 number-sections: true
 toc: true
@@ -23,7 +24,12 @@ library(knitr)
 
 # Introduction
 
+Music is a powerful medium that reflects the personal journeys of artists and the cultural landscapes of their times. With the advent of music streaming platforms, unprecedented amounts of data on songs and artists are now accessible, enabling detailed analysis of musical features such as tempo, energy, and valence. However, while much research has focused on broad trends across genres or artists, there is a gap in understanding how the creative expression of individual artists evolves over time. This study addresses this gap by examining the works of David Tao through a dataset sourced from Spotify.
+
+Our analysis highlights two key findings. First, there is no simple positive correlation between `tempo` and `valence`, indicating that faster songs are not always happier in Tao’s discography, likely due to variations in instrumentation and lyrical themes. Second, the energy levels in his songs exhibit a notable decline before rising again, possibly reflecting shifts in his personal experiences or creative priorities. These findings contribute to a deeper understanding of the complex interplay between an artist's personal evolution and their musical output.
+
 To conduct the analysis of songs on Spotify, a dataset downloaded from @spotify was utilized, as described in @sec-data. Based on the initial findings, it was observed that `tempo` and `valence` are not positively correlated in a simple (linear) way, while energy falls then rises with time (@sec-discussion). Also, supplementary insights are provided in @sec-appendix.
+
 
 # Data {#sec-data}
 
