@@ -55,6 +55,8 @@ The variables analyzed in this study are listed below:
 
 `tempo`: the pace of the song.
 
+Energy is represented as a value between 0 and 1, captures the intensity and activity level of a song. Higher values suggest more energetic tracks, characterized by loudness, dynamic range, and rhythmic drive. Valence also measured on a scale from 0 to 1, reflects the positivity or happiness of a song. Lower values indicate more somber or negative tones, while higher values suggest happier or more cheerful moods. Tempo is Measured in beats per minute (BPM), tempo quantifies the speed or pace of a song. Higher BPM values indicate faster songs and vice versa.
+
 The dataset was accessed using the `spotifyr` package (@spotifyr). For the analysis, the R programming language was employed (@r), utilizing the `tidyverse` (@tidyverse) package for data cleaning, transformation, visualization, the `knitr` package to visualize the data, and the `here` package (@here) accessing the data in this analysis. Afterward, the cleaned dataset was processed and tested using additional functions from the `tidyverse` package (@tidyverse).
 
 ## Preview of the Dataset
