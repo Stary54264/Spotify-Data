@@ -37,7 +37,7 @@ data <- read_csv(here::here("data/analysis_data/analysis_data.csv"))
 
 ## Overview
 
-The dataset used in this analysis is the songs of David Tao sourced from Spotify (@spotify). It records various aspects of the songs by David from 1997 to present.
+The dataset used in this analysis is about the songs of David Tao, sourced from Spotify (@spotify). It was accessed by an API. It records various aspects of the songs by David from 1997 to present.
 
 The variables analyzed in this study are listed below:
 
@@ -76,7 +76,7 @@ kable(head(data), format = "markdown")
 
 data |>
   ggplot(aes(x = tempo, y = valence)) +
-  geom_point(col = "lightblue") +
+  geom_point(col = "lightblue", alpha = 0.8) +
   geom_smooth() +
   labs(x = "Tempo", y = "Valence")
 ```
@@ -90,7 +90,7 @@ data |>
 
 data |>
   ggplot(aes(x = album_release_date, y = energy)) +
-  geom_point(col = "lightblue") +
+  geom_point(col = "lightblue", alpha = 0.8) +
   geom_smooth() +
   labs(x = "Date Released", y = "Energy")
 ```
@@ -119,12 +119,12 @@ The data cleaning process involved tidying the dates, filtering out useless colu
 #| message: false
 
 summarise_energy <- data |>
-  summarise(Mean = round(mean(energy), 3),
-            Median = round(median(energy), 3),
-            Variance = round(var(energy), 3),
-            Min = round(min(energy), 3),
-            Max = round(max(energy), 3),
-            IQR = round(IQR(energy), 3)
+  summarise(Mean = round(mean(energy), 1),
+            Median = round(median(energy), 1),
+            Variance = round(var(energy), 1),
+            Min = round(min(energy), 1),
+            Max = round(max(energy), 1),
+            IQR = round(IQR(energy), 1)
   )
 kable(summarise_energy, format = "markdown")
 ```
@@ -137,12 +137,12 @@ kable(summarise_energy, format = "markdown")
 #| message: false
 
 summarise_valence <- data |>
-  summarise(Mean = round(mean(valence), 3),
-            Median = round(median(valence), 3),
-            Variance = round(var(valence), 3),
-            Min = round(min(valence), 3),
-            Max = round(max(valence), 3),
-            IQR = round(IQR(valence), 3)
+  summarise(Mean = round(mean(valence), 1),
+            Median = round(median(valence), 1),
+            Variance = round(var(valence), 1),
+            Min = round(min(valence), 1),
+            Max = round(max(valence), 1),
+            IQR = round(IQR(valence), 1)
   )
 kable(summarise_valence, format = "markdown")
 ```
@@ -155,12 +155,12 @@ kable(summarise_valence, format = "markdown")
 #| message: false
 
 summarise_tempo <- data |>
-  summarise(Mean = round(mean(tempo), 3),
-            Median = round(median(tempo), 3),
-            Variance = round(var(tempo), 3),
-            Min = round(min(tempo), 3),
-            Max = round(max(tempo), 3),
-            IQR = round(IQR(tempo), 3)
+  summarise(Mean = round(mean(tempo), 1),
+            Median = round(median(tempo), 1),
+            Variance = round(var(tempo), 1),
+            Min = round(min(tempo), 1),
+            Max = round(max(tempo), 1),
+            IQR = round(IQR(tempo), 1)
   )
 kable(summarise_tempo, format = "markdown")
 ```
