@@ -69,7 +69,7 @@ kable(head(data), format = "markdown")
 
 ```{r, fig.width=4, fig.height=2}
 #| label: fig-tem-val
-#| fig-cap: Relationship of Tempo and Valence in David's Songs
+#| fig-cap: Relationship between Pace and Key in David's Songs
 #| echo: false
 #| warning: false
 #| message: false
@@ -131,7 +131,7 @@ kable(summarise_energy, format = "markdown")
 
 ```{r}
 #| label: tbl-valence
-#| tbl-cap: Summarise Statistics of Valence in David's Songs
+#| tbl-cap: Summarise Statistics of Key in David's Songs
 #| echo: false
 #| warning: false
 #| message: false
@@ -149,7 +149,7 @@ kable(summarise_valence, format = "markdown")
 
 ```{r}
 #| label: tbl-tempo
-#| tbl-cap: Summarise Statistics of Tempo in David's Songs
+#| tbl-cap: Summarise Statistics of Pace in David's Songs
 #| echo: false
 #| warning: false
 #| message: false
